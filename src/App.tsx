@@ -1,26 +1,41 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import CommentBox from 'components/commentbox';
+import CommentList from 'components/commentlist';
+import Counter from 'components/counter';
+import Fetch from 'components/fetchdata';
+import styled from 'styled-components';
 
-function App() {
+const Body = styled.div`
+position: absolute;
+top: 50%;
+right: 50%;
+transform: translate(-50%, -50%);
+`;
+
+const Divider = styled.div`
+margin-top: 40px;
+`;
+
+const LineDivider = styled.hr`
+border-top: 1px solid;
+`;
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Body>
+      <Divider>
+        <Counter />
+      </Divider>
+      <LineDivider />
+      <Divider>
+        <CommentList />
+        <CommentBox />
+      </Divider>
+      <LineDivider />
+      <Divider>
+        <Fetch />
+      </Divider>
+    </Body>
   );
-}
+};
 
 export default App;
