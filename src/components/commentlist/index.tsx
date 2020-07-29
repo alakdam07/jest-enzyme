@@ -9,10 +9,12 @@ const CommentList = () => {
   return (
     <div>
       {state.map((i) =>
-        <ul key={i.id}><li data-test="" style={{ "margin": 10 }}>
-          {i.title}
+        <ul key={i.id}>
+          <li data-test="list" style={{ "margin": 10 }}>
+            {i.title}
+          </li>
           {<button onClick={() => dispatch(remove(i.id))}>remove</button>}
-        </li></ul>)}
+        </ul>)}
       <button onClick={() => dispatch(sort())}>sort</button>
     </div>
   );

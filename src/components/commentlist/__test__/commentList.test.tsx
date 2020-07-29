@@ -22,6 +22,6 @@ it(`Find the lenght of the li from redux store`, () => {
 });
 
 it(`display the text of the li from redux store`, () => {
-  // .render() => CheerioWrapper
-  // console.log(wrapped.render().text(``));
+  const list = wrapped.find(`[data-test="list"]`).map((node) => node.text());
+  expect(list).toEqual([`clean`, `Running`, `pack`]);
 });

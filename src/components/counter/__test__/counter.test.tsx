@@ -10,6 +10,7 @@ beforeEach(() => {
       <Counter />
     </Root>
   );
+  // console.log(wrapped.debug());
 });
 
 afterEach(() => {
@@ -27,8 +28,8 @@ describe(`This is counter component`, () => {
     expect(wrapped.find(`h1`).text()).toEqual(`2`);
   });
   it(`after click it will decrease the value`, () => {
-    expect(wrapped.find(`h1`).text()).toEqual(`1`);
+    expect(wrapped.find(`h1`).text()).toEqual(`2`);
     wrapped.find(`button`).at(1).find(`[data-test="decrement"]`).simulate(`click`);
-    expect(wrapped.find(`h1`).text()).toEqual(`0`);
+    expect(wrapped.find(`h1`).text()).toEqual(`1`);
   });
 });
