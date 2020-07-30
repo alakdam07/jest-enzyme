@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from "enzyme"; // mount is full dom renderning function with children
-import CommentList from 'components/commentlist/index';
+import CommentList from 'components/commentlist';
 import Root from "root/index";
 
 let wrapped;

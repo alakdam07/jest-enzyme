@@ -4,12 +4,12 @@ import CommentList from 'components/commentlist';
 import Counter from 'components/counter';
 import Fetch from 'components/fetchdata';
 import styled from 'styled-components';
+import FetchAxios from 'components/axiosFetch';
+import './App.css';
 
 const Body = styled.div`
-position: absolute;
-top: 50%;
-right: 50%;
-transform: translate(-50%, -50%);
+margin-top:30px;
+
 `;
 
 const Divider = styled.div`
@@ -23,16 +23,20 @@ const App = () => {
   return (
     <Body>
       <Divider>
-        <Counter />
-      </Divider>
-      <LineDivider />
-      <Divider>
         <CommentList />
         <CommentBox />
       </Divider>
       <LineDivider />
       <Divider>
+        <Counter />
+      </Divider>
+      <LineDivider />
+      <Divider>
         <Fetch />
+      </Divider>
+      <LineDivider />
+      <Divider>
+        <FetchAxios />
       </Divider>
     </Body>
   );

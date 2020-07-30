@@ -13,6 +13,8 @@ const GlobalStyle = createGlobalStyle`
 
 interface IProps {
   children: JSX.Element[] | JSX.Element;
+  initialState: any;
+
 }
 export default ({ children }: IProps) => {
   return (
