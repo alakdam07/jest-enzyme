@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from "enzyme"; // mount is full dom renderning function with children
 import CommentList from 'components/commentlist';
-import Root from "root/index";
+import Root from 'root';
 
 let wrapped;
 beforeEach(() => {

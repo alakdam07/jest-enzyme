@@ -32,11 +32,11 @@ export default () => {
   const [inputValue, setInputValue] = useState(``);
   const dispatch = useDispatch();
 
-  const changeHandler = (e: React.FormEvent<HTMLInputElement>) => {
+  const changeHandler = (e: any) => {
     setInputValue(e.target.value);
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLInputElement>) => {
+  const handleSubmit = (e: any) => {
     e.preventDefault();
     dispatch(addTodo(inputValue));
     setInputValue(``);
