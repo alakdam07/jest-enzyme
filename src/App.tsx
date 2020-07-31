@@ -27,6 +27,7 @@ const App = () => {
         <CommentBox />
       </Divider>
       <LineDivider />
+      <LineDivider />
       <Divider>
         <Counter />
       </Divider>
