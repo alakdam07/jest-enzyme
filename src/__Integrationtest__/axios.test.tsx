@@ -22,7 +22,7 @@ it(`user will click the button and it will display the list of name`, (done) => 
   );
 
   // console.log(wrapped.debug());
-  wrapped.find(`button`).at(0).find(`[data-test="axios-fetch"]`).simulate(`click`);
+  wrapped.find(`button`).find(`[data-test="axios-fetch"]`).simulate(`click`);
   moxios.wait(() => {
     wrapped.update();
     expect(wrapped.find(`li`).length).toEqual(2);

@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from "enzyme"; // mount is full dom renderning function with children
-import Counter from 'components/counter';
+import Counter from '../../App';
 import Root from "root";
 
 let wrapped;
@@ -24,13 +24,16 @@ describe(`This is counter component`, () => {
 
   it(`after click it will increase the value`, () => {
     expect(wrapped.find(`h1`).text()).toEqual(`1`);
-    wrapped.find(`button`).at(0).find(`[data-test="increment"]`).simulate(`click`);
+    wrapped.find(`button`).find(`[data-test="increment"]`).simulate(`click`);
     expect(wrapped.find(`h1`).text()).toEqual(`2`);
   });
 
   it(`after click it will decrease the value`, () => {
     expect(wrapped.find(`h1`).text()).toEqual(`2`);
-    wrapped.find(`button`).at(1).find(`[data-test="decrement"]`).simulate(`click`);
+    wrapped.find(`button`).find(`[data-test="decrement"]`).simulate(`click`);
     expect(wrapped.find(`h1`).text()).toEqual(`1`);
   });
 });
+
+// wrapped.find(`[data-test="increment"]`).hostNodes().simulate(`click`);
+// more details: https://enzymejs.github.io/enzyme/docs/api/ShallowWrapper/hostNodes.html
